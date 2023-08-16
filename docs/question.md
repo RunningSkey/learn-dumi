@@ -197,3 +197,33 @@ api 接口开发
 - app(真机调试) - 最好
 - 微信小程序
 - 模拟机
+
+
+## github 分支保护
+
+- GitHub 已经在默认情况下将默认分支的名称从 "master" 改为 "main"，以避免与语言中的不适当术语相关联。因此，在这个回答中，我会使用 "main" 分支来代替 "master" 分支。如果您仍在使用 "master" 分支，请将以下步骤应用于 "master" 分支。
+
+要防止直接向 GitHub 的默认分支（通常是 "main"）提交代码，您可以采取以下一种或多种方法：
+
+- 1. 分支保护（Branch Protection）：
+     您可以设置分支保护来限制对默认分支的直接推送（push）。分支保护可以确保只有经过审核的代码才能合并到默认分支中。这样，您可以通过 Pull Request（PR）的方式进行代码审查和合并。
+
+打开您的 GitHub 仓库。
+点击上方的 "Settings"（设置）选项卡。
+在左侧菜单中，选择 "Branches"（分支）。
+在 "Branch protection rules"（分支保护规则）部分，点击 "Add rule"（添加规则）。
+选择要保护的分支（例如 "main"）。
+在 "Protect matching branches"（保护匹配分支）部分，选择以下选项：
+"Require pull request reviews before merging"（在合并前要求审核 PR）
+"Require status checks to pass before merging"（在合并前要求状态检查通过）
+"Require branches to be up to date before merging"（在合并前要求分支是最新的）
+禁用直接推送（Push）：
+
+- 2. 另一种方法是禁用对默认分支的直接推送，从而只允许通过 PR 进行更改。这可以在仓库的设置中完成。
+
+打开您的 GitHub 仓库。
+点击上方的 "Settings"（设置）选项卡。
+在左侧菜单中，选择 "Branches"（分支）。
+在 "Branch protection rules"（分支保护规则）部分，选择默认分支（例如 "main"）。
+在 "Branch protection rules for main"（主分支的分支保护规则）部分，取消选中 "Allow force pushes"（允许强制推送）和 "Allow deletions"（允许删除）。
+这些方法可以帮助您防止直接向 GitHub 默认分支提交代码，从而促进代码审查和合并流程的使用。通过 Pull Request 进行代码审查有助于确保代码质量和团队合作。

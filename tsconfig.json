@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "baseUrl": "./",
+    "paths": {
+      "@@/*": [".dumi/tmp/*"],
+      "@": ["src"]
+    },
+    "jsx": "react-jsx",
+    "noImplicitAny": false
+  },
+  "include": [".dumi/**/*", ".dumirc.ts", "src"]
+}

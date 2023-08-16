@@ -1,0 +1,25 @@
+.text {
+  white-space: pre-wrap;
+  margin: 10px auto;
+}
+.text.loading {
+  // 光标字符显示
+  &::after {
+    content: '▌';
+  }
+  // 光标闪烁动画
+  &::after {
+    animation: blinker 1s step-end infinite;
+  }
+  @keyframes blinker {
+    0% {
+      visibility: visible;
+    }
+    50% {
+      visibility: hidden;
+    }
+    100% {
+      visibility: visible;
+    }
+  }
+}

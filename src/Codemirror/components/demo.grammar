@@ -1,0 +1,36 @@
+@top Program { expression* }
+
+@skip { space | LineComment }
+
+expression {
+  Identifier |
+  String |
+  Number |
+  Blue |
+  Green |
+  Table | 
+  Application { "(" expression* ")" }
+}
+
+@tokens {
+  Identifier { $[a-zA-Z_\-]+ }
+
+  String { '"' (!["\\] | "\\" _)* '"' }
+
+  Number { $[0-9]+ }
+
+  Blue { '#' String }
+  Green { '.' '[' String ']' }
+
+  Table { Blue Green }
+  
+
+
+  LineComment { ";" ![\n]* }
+
+  space { $[ \t\n\r]+ }
+
+  "(" ")"
+}
+
+@detectDelim
